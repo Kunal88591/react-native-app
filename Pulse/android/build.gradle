@@ -4,8 +4,13 @@ buildscript {
         minSdkVersion = 24
         compileSdkVersion = 36
         targetSdkVersion = 36
-        ndkVersion = "27.1.12297006"
         kotlinVersion = "2.1.20"
+
+        // Only pin NDK if explicitly provided by local env.
+        // This avoids hard-failing builds when a broken NDK install exists.
+        if (project.hasProperty("ANDROID_NDK_VERSION")) {
+            ndkVersion = project.property("ANDROID_NDK_VERSION")
+        }
     }
     repositories {
         google()

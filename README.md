@@ -94,6 +94,24 @@ npm start
 npm run android
 ```
 
+### 3.1) Build Release APK (Windows)
+
+```powershell
+cd Pulse\android
+.\gradlew.bat clean
+.\gradlew.bat assembleRelease
+```
+
+APK output:
+
+```txt
+Pulse/android/app/build/outputs/apk/release/app-release.apk
+```
+
+Important:
+- Use `.\gradlew.bat` in PowerShell.
+- The APK path is a file location, not a command.
+
 ### 4) Run iOS (macOS only)
 
 ```bash
